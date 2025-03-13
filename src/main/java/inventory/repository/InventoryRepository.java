@@ -7,7 +7,7 @@ import javafx.collections.ObservableList;
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class InventoryRepository {
+public class InventoryRepository implements Repository {
 
 	private static String filename = "data/items.txt";
 	private Inventory inventory;
@@ -21,9 +21,7 @@ public class InventoryRepository {
 		//ClassLoader classLoader = InventoryRepository.class.getClassLoader();
 		File file = new File(filename);
 		ObservableList<Part> listP = FXCollections.observableArrayList();
-		BufferedReader br = null;
-		try {
-			br = new BufferedReader(new FileReader(file));
+		try (BufferedReader br = new BufferedReader(new FileReader(file))) {
 			String line = null;
 			while((line=br.readLine())!=null){
 				Part part=getPartFromString(line);

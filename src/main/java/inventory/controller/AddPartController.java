@@ -58,7 +58,9 @@ public class AddPartController implements Initializable, Controller {
     @FXML
     private TextField minTxt;
 
-    public AddPartController(){}
+    public AddPartController(){
+        //empty
+    }
 
     @Override
     public void setService(InventoryService service){

@@ -28,7 +28,7 @@ public class ModifyPartController implements Initializable, Controller {
     private Stage stage;
     private Parent scene;
     private int partIndex= getModifyPartIndex();
-    private String errorMessage = new String();
+    private String errorMessage = "";
     private boolean isOutsourced;
     private int partId;
 
