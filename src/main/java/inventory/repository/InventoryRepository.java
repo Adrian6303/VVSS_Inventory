@@ -16,6 +16,13 @@ public class InventoryRepository implements Repository {
 		readParts();
 		readProducts();
 	}
+	public InventoryRepository(boolean loadData){
+		this.inventory=new Inventory();
+		if(loadData) {
+			readParts();
+			readProducts();
+		}
+	}
 
 	public void readParts(){
 		//ClassLoader classLoader = InventoryRepository.class.getClassLoader();

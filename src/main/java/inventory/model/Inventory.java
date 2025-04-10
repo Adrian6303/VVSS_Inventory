@@ -44,7 +44,7 @@ public class Inventory {
         boolean isFound = false;
         for(Product p: products) {
             if(p.getName().contains(searchItem) || (p.getProductId()+"").equals(searchItem)) return p;
-            isFound = true;
+
         }
         if(!isFound) {
             Product product = new Product(0, null, 0.0, 0, 0, 0, null);
