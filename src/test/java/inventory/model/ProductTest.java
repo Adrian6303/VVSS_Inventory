@@ -53,6 +53,14 @@ class ProductTest {
         assertNotNull(found);
         assertEquals("Clock", found.getName());
 
+    }
+
+    @Test
+    void testLookupProduct2(){
+        Product newProduct = new Product(1, "Clock", 7.45, 7, 2, 20, null);
+
+        inventory.addProduct(newProduct);
+
         Product found2 = inventory.lookupProduct("product1");
         assertNull(found2.getName());
     }
