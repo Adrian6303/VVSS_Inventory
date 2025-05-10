@@ -22,7 +22,7 @@ class Step3 {
         service = new InventoryService(repository);
     }
 
-    @Test
+
     void testCompleteProductLifecycle() {
         // Create parts
         service.addInhousePart("Wheel", 25.0, 10, 1, 100, 101);
@@ -45,21 +45,27 @@ class Step3 {
         assertEquals(200.0, bike.getPrice());
     }
 
-    @Test
+
     void testInventoryAutoIncrement() {
         // First product
         service.addProduct("Product 1", 10.0, 5, 1, 10, FXCollections.observableArrayList());
         Product p1 = service.lookupProduct("Product 1");
-        assertEquals(1, p1.getProductId());
+        assertEquals(2, p1.getProductId());
 
         // Second product
         service.addProduct("Product 2", 20.0, 5, 1, 10, FXCollections.observableArrayList());
         Product p2 = service.lookupProduct("Product 2");
-        assertEquals(2, p2.getProductId());
+        assertEquals(3, p2.getProductId());
 
         // Verify part IDs increment separately
         service.addInhousePart("Part 1", 5.0, 5, 1, 10, 101);
         Part part = service.lookupPart("Part 1");
-        assertEquals(1, part.getPartId());
+        assertEquals(3, part.getPartId());
+    }
+
+    @Test
+    void testStep3() {
+        testCompleteProductLifecycle();
+        testInventoryAutoIncrement();
     }
 }

@@ -26,7 +26,7 @@ class InventoryRepositoryTest {
 
 
     @Test
-    void testLookupPart() {
+    void testRepository() {
         when(mockInventory.lookupPart("Test Part")).thenReturn(
                 new Part(1, "Test Part", 10.0, 5, 1, 10) {}
         );
@@ -34,14 +34,12 @@ class InventoryRepositoryTest {
         Part found = repository.lookupPart("Test Part");
         assertNotNull(found);
         assertEquals("Test Part", found.getName());
-    }
 
-    @Test
-    void testGetAllParts() {
         ObservableList<Part> expectedParts = FXCollections.observableArrayList();
         when(mockInventory.getAllParts()).thenReturn(expectedParts);
 
         ObservableList<Part> actualParts = repository.getAllParts();
         assertSame(expectedParts, actualParts);
+
     }
 }

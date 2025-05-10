@@ -32,7 +32,7 @@ class Step2 {
         when(mockPart.getPartId()).thenReturn(999);
     }
 
-    @Test
+
     void testAddProductIntegration() {
         // Arrange
         ObservableList<Part> parts = FXCollections.observableArrayList();
@@ -47,7 +47,7 @@ class Step2 {
         assertEquals(0, found.getAssociatedParts().size()); // No parts added
     }
 
-    @Test
+
     void testPartLookupIntegration() {
         // Arrange
         realRepository.addPart(new InhousePart(1, "Test Part", 10.0, 5, 1, 10, 123));
@@ -59,5 +59,11 @@ class Step2 {
         assertNotNull(found);
         assertEquals("Test Part", found.getName());
         assertEquals(10.0, found.getPrice());
+    }
+
+    @Test
+    void testStep2(){
+        testAddProductIntegration();
+        testPartLookupIntegration();
     }
 }
