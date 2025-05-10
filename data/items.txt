@@ -10,4 +10,6 @@ I,9,Gear,5.99,10,1,50,1234
 O,10,Sensor,9.99,5,1,20,ACME Corp
 I,11,Gear,5.99,10,1,50,1234
 O,12,Sensor,9.99,5,1,20,ACME Corp
+I,13,Gear,5.99,10,1,50,1234
+O,14,Sensor,9.99,5,1,20,ACME Corp
 P,1,Bicycle,200.0,5,1,10,1:2

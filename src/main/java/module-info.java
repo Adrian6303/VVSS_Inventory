@@ -3,7 +3,7 @@ module inventory {
     requires javafx.fxml;
     requires javafx.controls;
 
-    opens inventory.model to javafx.base, org.junit.platform.commons;
+    opens inventory.model;
     exports inventory.model;
 
     opens inventory to javafx.fxml;
