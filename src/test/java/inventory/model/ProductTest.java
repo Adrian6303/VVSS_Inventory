@@ -65,4 +65,17 @@ class ProductTest {
         assertNull(found2.getName());
     }
 
+
+    @Test
+    void testProduct(){
+        Product newProduct = new Product(1, "Clock", 7.45, 7, 2, 20, null);
+
+        assertEquals(1, newProduct.getProductId());
+        assertEquals("Clock", newProduct.getName());
+        assertEquals(7.45, newProduct.getPrice());
+        assertEquals(7, newProduct.getInStock());
+        assertEquals(2, newProduct.getMin());
+        assertEquals(20, newProduct.getMax());
+    }
+
 }
