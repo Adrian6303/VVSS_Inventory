@@ -22,19 +22,16 @@ class InventoryServiceTest {
         mockRepo = Mockito.mock(InventoryRepository.class);
         service = new InventoryService(mockRepo);
     }
-
+    
     @Test
-    void testAddInhousePart() {
+    void testService(){
         when(mockRepo.getAutoPartId()).thenReturn(1);
 
         service.addInhousePart("Gear", 10.0, 5, 1, 10, 123);
 
         verify(mockRepo, times(1)).addPart(any());
         verify(mockRepo, times(1)).getAutoPartId();
-    }
 
-    @Test
-    void testLookupProduct() {
         ObservableList<Part> parts = FXCollections.observableArrayList();
         Product expectedProduct = new Product(1, "Bicycle", 100.0, 5, 1, 10, parts);
         when(mockRepo.lookupProduct("Bicycle")).thenReturn(expectedProduct);
@@ -42,13 +39,12 @@ class InventoryServiceTest {
         Product found = service.lookupProduct("Bicycle");
         assertNotNull(found);
         assertEquals("Bicycle", found.getName());
-    }
 
-    @Test
-    void testUpdateProduct() {
-        ObservableList<Part> parts = FXCollections.observableArrayList();
-        service.updateProduct(0, 1, "Updated", 150.0, 5, 1, 10, parts);
+        ObservableList<Part> parts2 = FXCollections.observableArrayList();
+        service.updateProduct(0, 1, "Updated", 150.0, 5, 1, 10, parts2);
 
         verify(mockRepo, times(1)).updateProduct(eq(0), any(Product.class));
+
+
     }
 }
