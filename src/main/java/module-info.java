@@ -16,9 +16,9 @@ module inventory {
 
 
 
-    opens inventory to javafx.fxml;
+    opens inventory;
     exports inventory;
 
-    opens inventory.controller to javafx.fxml;
+    opens inventory.controller;
     exports inventory.controller;
 }
