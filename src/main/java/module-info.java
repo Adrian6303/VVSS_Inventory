@@ -3,6 +3,8 @@ module inventory {
     requires javafx.fxml;
     requires javafx.controls;
 
+
+
     opens inventory.model;
     exports inventory.model;
 
@@ -11,6 +13,7 @@ module inventory {
 
     opens inventory.repository;
     exports inventory.repository;
+
 
 
     opens inventory to javafx.fxml;

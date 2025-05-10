@@ -45,6 +45,8 @@ class Step2 {
         assertNotNull(found);
         assertEquals("Test Product", found.getName());
         assertEquals(0, found.getAssociatedParts().size()); // No parts added
+        service.deleteProduct(found);
+
     }
 
 
@@ -59,6 +61,8 @@ class Step2 {
         assertNotNull(found);
         assertEquals("Test Part", found.getName());
         assertEquals(10.0, found.getPrice());
+
+        service.deletePart(found);
     }
 
     @Test
