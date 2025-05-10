@@ -6,6 +6,13 @@ module inventory {
     opens inventory.model;
     exports inventory.model;
 
+    opens inventory.service;
+    exports inventory.service;
+
+    opens inventory.repository;
+    exports inventory.repository;
+
+
     opens inventory to javafx.fxml;
     exports inventory;
 

@@ -22,7 +22,7 @@ class InventoryServiceTest {
         mockRepo = Mockito.mock(InventoryRepository.class);
         service = new InventoryService(mockRepo);
     }
-    
+
     @Test
     void testService(){
         when(mockRepo.getAutoPartId()).thenReturn(1);
